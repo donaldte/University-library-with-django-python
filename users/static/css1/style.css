@@ -1,0 +1,106 @@
+
+/* Rectangle 1 */
+
+.bdy{
+position: relative;
+width: 582px;
+height: 344px;
+left:50px;
+top: 100px;
+
+
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 20px;
+}
+/* Header */
+#head{
+width: 372px;
+height: 90px;
+padding-bottom: 10px;
+}
+/*Label*/
+label{
+    margin-left: 10px;
+}
+/* Name */
+#name{
+width: 378px;
+height: 21px;
+margin-bottom: 10px;
+border-top-style: hidden;
+border-left-style: hidden;
+border-right-style: hidden;
+}
+.no-outline:focus{
+    outline: none;
+}
+/* Faculty */
+#fal{
+width: 320px;
+height: 21px;
+margin-bottom: 10px;
+border-top-style: hidden;
+border-left-style: hidden;
+border-right-style: hidden;
+}
+/* Depart */
+#dep{
+width: 340px;
+height: 21px;
+margin-bottom: 10px;
+border-top-style: hidden;
+border-left-style: hidden;
+border-right-style: hidden;
+}
+/* Matricul */
+#mat{
+width: 200px;
+height: 21px;
+margin-bottom: 10px;
+border-top-style: hidden;
+border-left-style: hidden;
+border-right-style: hidden;
+}
+/*level*/
+#level{
+width: 95px;
+height: 21px;
+margin-bottom: 10px;
+border-top-style: hidden;
+border-left-style: hidden;
+border-right-style: hidden;
+}
+/* Date */
+#date{
+width: 200px;
+height: 21px;
+margin-bottom: 10px;
+border-top-style: hidden;
+border-left-style: hidden;
+border-right-style: hidden;
+}
+/*sex*/
+#sex{
+    width: 90px;
+    height: 21px;
+    margin-bottom: 10px;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;   
+}
+/* Signature */
+#signature{
+width: 293px;
+height: 16px;
+margin-left: 150px;
+margin-top: 25px;
+}
+/* Photo */
+#photo{ 
+height: 110px;
+padding-left: 50px;
+padding-right: 35px;
+padding-top: 8px;
+}

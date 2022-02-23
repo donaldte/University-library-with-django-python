@@ -1,0 +1,93 @@
+{% extends 'student/base.html' %}
+{% load static %}
+
+
+{% block body %}
+<div class="col-md-12 col-sm-5 col-xs-5">
+
+
+    <div id="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">Overview</li>
+            </ol>
+
+            <div class="row">
+
+                <div class="col-xl-3  col-sm-6 mb-3">
+                    <div class="card text-white bg-dark o-hidden h-100">
+                        <div class="card-body">
+                            <div class="card-body-icon">
+                                <i class="fas fa-fw fa-book"></i>
+                            </div>
+
+                            <div class="mr"> <strong style="color: chartreuse;">COMMAND BOOK</strong>
+                                {% if com %}
+                                {% for book in com %} <ol>
+                                    <li> {{ book.name }} </li> <span style="color:coral">{{ book.comand_date}}</span>
+                                </ol>{% endfor %}
+                                {% else %}
+                                <p>No Command</p>
+
+                                {% endif %}
+                            </div>
+
+                        </div>
+                        {% if com %}
+                        <a class="card-footer text-white clearfix small z-1" href="#">
+                            <span class="float-left">Go To compus and take your book</span><br>
+                            <span class="float-right">
+                            </span>
+                        </a>
+                        {% endif %}
+
+
+
+                    </div>
+                </div>
+
+                <div class="col-xl-3  col-sm-6 mb-3">
+                    <div class="card text-white bg-success o-hidden h-100">
+                        <div class="card-body">
+                            <div class="card-body-icon">
+                                <i class="fas fa-fw fa-book"></i>
+                            </div>
+
+                            <div class="mr"> <strong style="color: rgb(228, 231, 18);">BORROW BOOK</strong>
+                                {% if  books %}
+                                {% for book in books %} 
+                                <ol>
+                                    <li> {{ book.name }}</li><span style="color:yellow;">{{ book.comand_date}}</span>
+                                </ol>{% endfor %}
+                                {% else %}
+                                <p>No Borrow</p>
+
+                                {% endif %}
+                            </div>
+
+                        </div>
+                        {% if books %}
+                        <a class="card-footer text-white clearfix small z-1" href="#">
+                            <span class="float-left">You have just <h3><strong> 7</strong></h3> days with any
+                                books!</span><br>
+                            <span class="float-right">
+                            </span>
+                        </a>
+                        {% endif %}
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

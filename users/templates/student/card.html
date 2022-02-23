@@ -1,0 +1,63 @@
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="bdy" id='example'>
+  <img src="{% static 'css1\Header.png' %}" id="head"> </img>
+  <img src="{% static 'css1\Photo.png' %}" id="photo"> </img>
+  <form>
+    <label>
+      Name:<input type="text" id="name"
+        value="                  {{obj.user.first_name|capfirst }}   {{ obj.user.last_name|capfirst }}">
+    </label>
+    <br>
+    <label>
+      Faculty/School:<input type="text" id="fal" value="           {{ obj.school|capfirst }}">
+    </label>
+    <br>
+    <label id="dep">
+      Department:<input type="text" id="dep" value="                {{obj.department|capfirst}}">
+    </label>
+    <br>
+    <label>
+      Matricule:<input type="text" id="mat" value="   {{ obj.matricule|capfirst }}">
+    </label>
+    <label>
+      Level:<input type="number" id="level" value="{{obj.level }}">
+    </label>
+    <br>
+    <label id="date">
+      Date of Issue:<input type="text" id="date" value="                          {% now 'm/d/Y' %}">
+    </label>
+    <label>
+      Sex:<input type="text" id="sex" value="M">
+    </label>
+    <br>
+  </form>
+  {% if obj.picture %}
+  <img src="{{ obj.picture.url }}" id="signature"> </img>
+  {% else %}
+  <img src="{% static 'css1\Signature.png' %}" id="signature"> </img>
+  {% endif %}
+</div>
+<div class='row text-align-center'>
+  <center> <button id="dl">Download</button></center>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+<script type="text/javascript">
+  document.getElementById('dl').onclick = function(){
+    const screenbase = document.getElementById('example');
+    html2canvas(screenbase).then((canvas)=>{
+      const base64image = canvas.toDataURL('image/png');
+      var unchor = document.createElement('a');
+      unchor.setAttribute("href", base64image);
+      unchor.setAttribute("download", "card.png");
+      unchor.click();
+      unchor.remove();
+
+    });
+  };
+</script>
+{% endblock %}             

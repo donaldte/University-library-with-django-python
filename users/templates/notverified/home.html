@@ -1,0 +1,38 @@
+{% extends 'notverified/base.html' %}
+{% load static %}
+
+
+{% block body %}
+<div class="col-md-8 col-sm-5 col-xs-5">
+
+
+ <div id="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">Overview</li>
+            </ol>
+            <div class="text-center text-muted">
+
+            <h3>Hi <strong> {{ user.username }} </strong>  WELCOME to UBA-LIBRARY you're currently a not verified student, to be a verified go to 
+                UBA-LIBRARY store in canpus an see the administrator </h3>
+                <h4>bring:</h4>
+                <ol class="text-info">
+                    
+                    <li>Your receipt of this accademic year and</li> 
+                    <li>One thousand francs for plateform  and UBA-LIBRARY charge.</li>
+                </ol>
+                    <h4>After this your account should be activated.</h4>
+            
+
+            </div>
+           
+       
+        </div>
+    </div>
+</div>
+
+{% endblock %}
